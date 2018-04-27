@@ -1,2 +1,58 @@
 <!--Once you've found the current user's most compatible friend, display the result as a modal pop-up. The modal should display
 both the name and picture of the closest match.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder Home</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+        <h1><i class="fa fa-facebook-square" aria-hidden="true"></i> Friend Finder</h1>
+            <hr>
+            <h2 class="text-center">Answer a few basic questions.  Then find the friend with the greatest compatibility!</h2>
+            <br>
+
+            <div class="text-center">
+                <a href="../public/survey.html">
+                    <button type="button" class="btn btn-lg btn-primary">
+                        <span class="glyphicon glyphicon-list-alt"></span> Go to Survey</button>
+                </a>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friend List</a> |
+                    <a href="?">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+
+</body>
+
+</html>

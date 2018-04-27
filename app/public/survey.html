@@ -1,0 +1,177 @@
+<!--Survey HTML should have 10 questions.  Each should be rated on a 1-5 scale. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+    
+        <h1>Survey Questions</h1>
+        <hr>
+
+    <h2><strong>About You</strong></h2>
+
+    <h3>Name</h3>
+    <input type="text" id="name" class="form-control" required>
+    
+    <h3>Photo Link</h3>
+    <input type="text" id="photo" class="form-control" required>
+    
+    <hr>
+
+    <h2><strong>Question 1</strong></h2>
+    <h4>You consider yourself a dog person.</h4>
+    <select class="chosen-select" id="q1">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2><strong>Question 2</strong></h2>
+    <h4>You frequently attend music festivals or concerts.</h4>
+    <select class="chosen-select" id="q1">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2><strong>Question 3</strong></h2>
+    <h4>You enjoy cooking.</h4>
+    <select class="chosen-select" id="q1">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2><strong>Question 4</strong></h2>
+    <h4>You like to challenge yourself and take risks.</h4>
+    <select class="chosen-select" id="q1">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    
+    <h2><strong>Question 5</strong></h2>
+    <h4>You prefer to be outdoors.</h4>
+    <select class="chosen-select" id="q1">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    
+    <h2><strong>Question 6</strong></h2>
+    <h4>Being of service to others is important to you.</h4>
+    <select class="chosen-select" id="q1">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+<h2><strong>Question 7</strong></h2>
+<h4>You work best under a deadline.</h4>
+<select class="chosen-select" id="q1">
+    <option value=""></option>
+    <option value="1">1 (Strongly Disagree)</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5 (Strongly Agree)</option>
+</select>
+
+<h2><strong>Question 8</strong></h2>
+<h4>You are a good communicator.</h4>
+<select class="chosen-select" id="q1">
+    <option value=""></option>
+    <option value="1">1 (Strongly Disagree)</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5 (Strongly Agree)</option>
+</select>
+
+<h2><strong>Question 9</strong></h2>
+<h4>You like to cook.</h4>
+<select class="chosen-select" id="q1">
+    <option value=""></option>
+    <option value="1">1 (Strongly Disagree)</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5 (Strongly Agree)</option>
+</select>
+
+<h2><strong>Question 10</strong></h2>
+<h4>You can stay level headed in a crisis.</h4>
+<select class="chosen-select" id="q1">
+    <option value=""></option>
+    <option value="1">1 (Strongly Disagree)</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5 (Strongly Agree)</option>
+</select>
+
+<br>
+<br>
+
+<hr>
+
+<!-- Submit Button -->
+<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+    <i class="fa fa-check-circle" aria-hidden="true"></i>
+    Submit</button>
+
+<hr>
+<footer class="footer">
+    <div class="container">
+        <p>
+            <a href="/api/friends">API Friends List</a> |
+            <a href="?">GitHub Repo</a>
+        </p>
+    </div>
+</footer>
+
+    </div>
+</footer>
+
+</div>
+</body>
+</html>
