@@ -5,7 +5,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var path = require("path");
 
-var PORT = process.env.PORT || 80801;
+var PORT = process.env.PORT || 8081;
 
 // Sets up Express app to handle data
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,10 +13,10 @@ app.use(bodyParser.json());
 
 
 //Router path
-require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+require("./routing/apiRoutes.js")(app);
+require("./routing/htmlRoutes.js")(app);
 
-//Listner
+//Listen
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
