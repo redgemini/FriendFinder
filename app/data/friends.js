@@ -13,32 +13,32 @@
 var friends = [
   {
     name: "Penny",
-    photo: "..data/images/penny.jpg",
+    photo: "../images/penny.jpg",
     scores: ["5", "4", "4", "4", "5", "4", "2", "5", "1", "3"]
   },
   {
     name: "Leonard Hofstadter",
-    photo: "..data/images/leonard.jpg",
+    photo: "../images/leonard.jpg",
     scores: ["4", "2", "5", "1", "3", "2", "2", "1", "3", "2"]
   },
   {
     name: "Sheldon Cooper",
-    photo: "..data/images/sheldon.jpeg",
+    photo: "../images/sheldon.jpeg",
     scores: ["1", "2", "2", "4", "1", "1", "3", "2", "5", "5"]
   },
   {
     name: "Howard Wolowitz",
-    photo: "..data/images/howard.jpg",
+    photo: "../images/howard.jpg",
     scores: ["3", "3", "4", "2", "2", "1", "3", "2", "2", "3"]
   },
   {
     name: "Raj Koothrappali",
-    photo: "..data/images/raj.jpeg",
+    photo: "../images/raj.jpeg",
     scores: ["4", "3", "4", "1", "5", "2", "5", "3", "1", "4"]
   },
   {
     name: "Bernadette Rostenkowski",
-    photo: "..data/images/bernadette.jpg.jpg",
+    photo: "/images/bernadette.jpg",
     scores: ["3", "4", "2", "3", "2", "2", "3", "2", "4", "5"]
   }
 ];

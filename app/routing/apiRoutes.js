@@ -7,13 +7,13 @@
 var friends = require("../data/friends");
 
 //Route
-module.export = function(app) {
-  //Get API requests
-  app.get("/api/friends"),
-    function(req, res) {
-      res.json(friends);
-    };
-};
+module.exports = function(app) {
+
+//Get API requests
+app.get("/api/friends", function(req, res) {
+  res.json(friends);
+});
+
 app.post("/api/friends", function(req, res) {
   // loop through all of the options for a friend match
   var friendMatch = {
@@ -41,8 +41,7 @@ app.post("/api/friends", function(req, res) {
       var currentUserScore = userScores[j];
 
       // the totalDifference
-      totalDifference += Math.abs(
-        parseInt(currentUserScore) - parseInt(currentFriendScore)
+      totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore)
       );
     }
     // If the sum of differences is less then the differences of the current "friend match"
@@ -59,3 +58,4 @@ app.post("/api/friends", function(req, res) {
   // Return a JSON with the friendMatch.
   res.json(friendMatch);
 });
+};

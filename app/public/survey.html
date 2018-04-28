@@ -31,10 +31,10 @@
 
     <h2><strong>About You</strong></h2>
 
-    <h3>Name</h3>
+    <h3>Name (Required)</h3>
     <input type="text" id="name" class="form-control" required>
     
-    <h3>Photo Link</h3>
+    <h3>Photo Link (Required)</h3>
     <input type="text" id="photo" class="form-control" required>
     
     <hr>
@@ -52,7 +52,7 @@
 
     <h2><strong>Question 2</strong></h2>
     <h4>You frequently attend music festivals or concerts.</h4>
-    <select class="chosen-select" id="q1">
+    <select class="chosen-select" id="q2">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -63,7 +63,7 @@
 
     <h2><strong>Question 3</strong></h2>
     <h4>You enjoy cooking.</h4>
-    <select class="chosen-select" id="q1">
+    <select class="chosen-select" id="q3">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -74,7 +74,7 @@
 
     <h2><strong>Question 4</strong></h2>
     <h4>You like to challenge yourself and take risks.</h4>
-    <select class="chosen-select" id="q1">
+    <select class="chosen-select" id="q4">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -85,7 +85,7 @@
     
     <h2><strong>Question 5</strong></h2>
     <h4>You prefer to be outdoors.</h4>
-    <select class="chosen-select" id="q1">
+    <select class="chosen-select" id="q5">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -96,7 +96,7 @@
     
     <h2><strong>Question 6</strong></h2>
     <h4>Being of service to others is important to you.</h4>
-    <select class="chosen-select" id="q1">
+    <select class="chosen-select" id="q6">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -107,7 +107,7 @@
 
 <h2><strong>Question 7</strong></h2>
 <h4>You work best under a deadline.</h4>
-<select class="chosen-select" id="q1">
+<select class="chosen-select" id="q7">
     <option value=""></option>
     <option value="1">1 (Strongly Disagree)</option>
     <option value="2">2</option>
@@ -118,7 +118,7 @@
 
 <h2><strong>Question 8</strong></h2>
 <h4>You are a good communicator.</h4>
-<select class="chosen-select" id="q1">
+<select class="chosen-select" id="q8">
     <option value=""></option>
     <option value="1">1 (Strongly Disagree)</option>
     <option value="2">2</option>
@@ -129,7 +129,7 @@
 
 <h2><strong>Question 9</strong></h2>
 <h4>You like to cook.</h4>
-<select class="chosen-select" id="q1">
+<select class="chosen-select" id="q9">
     <option value=""></option>
     <option value="1">1 (Strongly Disagree)</option>
     <option value="2">2</option>
@@ -140,7 +140,7 @@
 
 <h2><strong>Question 10</strong></h2>
 <h4>You can stay level headed in a crisis.</h4>
-<select class="chosen-select" id="q1">
+<select class="chosen-select" id="q10">
     <option value=""></option>
     <option value="1">1 (Strongly Disagree)</option>
     <option value="2">2</option>
@@ -156,15 +156,14 @@
 
 <!-- Submit Button -->
 <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
-    <i class="fa fa-check-circle" aria-hidden="true"></i>
-    Submit</button>
+    <i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
 
 <hr>
 <footer class="footer">
     <div class="container">
         <p>
             <a href="/api/friends">API Friends List</a> |
-            <a href="?">GitHub Repo</a>
+            <a href="#">GitHub Repo</a>
         </p>
     </div>
 </footer>
@@ -173,5 +172,114 @@
 </footer>
 
 </div>
+
+<!-- Modal -->
+<div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">
+                    <strong>Friend Match</strong>
+                </h2>
+            </div>
+            <div class="modal-body">
+                <h2 id="match-name"></h2>
+                <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    //Chosen
+    var config = {
+        ".chosen-select": {},
+        ".chosen-select-deselect": {
+            allow_single_deselect: true
+        },
+        ".chosen-select-no-single": {
+            disable_search_threshold: 10
+        },
+        ".chosen-select-no-results": {
+            no_results_text: "No Results Found"
+        },
+        ".chosen-select-width": {
+            width: "90%"
+        }
+    };
+
+    for (var selector in config) {
+        $(selector).chosen(config[selector]);
+    }
+
+    // Form Input
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+
+   // Form validation
+    function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function () {
+            if ($(this).val() === "") {
+            isValid = false;
+            }
+            });
+
+            $(".chosen-select").each(function () {
+
+                if ($(this).val() === "") {
+                    isValid = false;
+                }
+            });
+            return isValid;
+        }
+
+        // If all required fields are filled
+        if (validateForm()) {
+
+        // Create an object for the user"s data
+            var userData = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+
+                // post data to the friends API.
+                $.post("/api/friends", userData, function (data) {
+
+                // result to match.
+                $("#match-name").text(data.name);
+                $("#match-img").attr("src", data.photo);
+
+                // modal with results
+                $("#results-modal").modal("toggle");
+
+            });
+        } else {
+            alert("Please fill out all fields before submitting!");
+        }
+    });
+</script>
+
 </body>
+
 </html>
