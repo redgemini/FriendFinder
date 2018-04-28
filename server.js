@@ -1,23 +1,21 @@
-//Your server.js file should require the basic npm packages we've used in class: express, body-parser and path
-
 var express = require("express");
-var app = express();
 var bodyParser = require("body-parser");
-var path = require("path");
 
-var PORT = process.env.PORT || 8081;
+// Create Express
+var app = express();
 
-// Sets up Express app to handle data
+//Set up Port
+var PORT = process.env.PORT || 8080;
+
+// Express Set Up
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//Routing
+require("./app/routing/apiRoutes")(app);
+//require("./routing/htmlRoutes.js")(app);
 
-//Router path
-require("./routing/apiRoutes.js")(app);
-require("./routing/htmlRoutes.js")(app);
-
-//Listen
+//Listen to start server
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
-
